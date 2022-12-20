@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+    $(function () {
+      $('form').on('submit', function(e) {
+        e.preventDefault();
+        
+	var dataJSON = {};
+	var resultJSON = {};
+        dataJSON.address =  $("#address").val();
+        
+	$.ajax({
+          url: "https://nft.townway.com.tw/mint",
+          type: "POST",
+          crossDomain: true,
+	  contentType: "application/json",
+          data:  JSON.stringify(dataJSON),
+          success: function(returnData) {
+            resultJSON = JSON.parse(returnData);
+          }
+        });
+        return resultJSON;
+      });
+    });
+    </script>
+    <title> NFT Minter </title>
+  </head>
+  <body>
+  <div class="container">
+    <h1> NFT Minter </h1>
+    <h2><p> 填入錢包後按下送出 (系統還不會有反應)</p></h2>
+    <h2><p> 到 <a href="https://testnets.opensea.io/">opensea testnet</a> 查看自己的交易</p></h2>
+    <form action="">
+       <p> 請填寫你的 Wallet address </p>
+       <p> <input id="address" type="text" class="form-control" placeholder="請留下您的 wallet address"></p>
+       <p> <button type="submit" id="address" class="btn btn-primary" style="width: 20%">送出</button></p>
+    </form>
+  </div> <!-- container -->
+
+  </body>
+
+</html>

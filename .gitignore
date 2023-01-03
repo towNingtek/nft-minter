@@ -132,3 +132,4 @@ dist
 # Config files
 configs.ts
 config.js
+yarn.lock

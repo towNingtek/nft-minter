@@ -1,0 +1,20 @@
+// TESTNET
+export const API_PORT = ""
+export const EVENT_NAME = ""
+export const WEB3_PROVIDER = ""
+export const POLYGONSCAN_ENDPOINT = ""
+export const POLYGONSCAN_API_KEY = ""
+export const NFT_CONTRACT_ADDRESS = ""
+export const RABBITMQ_ENDPOINT = ""
+export const DB_ENDPOINT = ""
+export const GAMA_SIGN_KEY = ""
+export const PURCHASED_CALLBACK_API = ""
+export const UNTRACED_CALLBACK_API = ""
+export const SLACK_ALERT = false
+export const SLACK_ALERT_API_KEY = ""
+export const SLACK_ALERT_CHANNEL = ""
+
+export const PAYMENT_CONTRACT_ADDRESS = ""
+export const TRANSFER_NFT_WHITELIST = [""]
+export const TRANSFER_CALLBACK_API = ""
+export const PAYMENT_CALLBACK_API = ""

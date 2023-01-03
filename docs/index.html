@@ -28,9 +28,14 @@
 	  contentType: "application/json",
           data:  JSON.stringify(dataJSON),
           success: function(returnData) {
-            resultJSON = JSON.parse(returnData);
+            // resultJSON = JSON.parse(returnData);
+            
+	    resultJSON = returnData;
           }
         });
+	if (resultJSON.status == "OK") {
+	  alert(resultJSON.status);
+	}
         return resultJSON;
       });
     });

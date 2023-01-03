@@ -1,0 +1,14 @@
+const contractAddr = ""
+const erc20Addr = "";
+const rpcService = ""
+
+// If the chain is included in the default chain, use chainId would be enough.
+// Otherwise, chainName, rpcUrls, nativeCurrency and blockExplorerUrls should be added.
+const chainConfig = [{
+    chainId: "", // chainId must be hexadecimal numbers (mumbai)
+}];
+
+// For WalletConnect
+const infuraId = "";
+const abi = `
+`
